@@ -1,0 +1,109 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Custom LaTeX additions
+%  Ananth Raghunathan
+%  ananthr@cs.stanford.edu
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\usepackage[bf, center]{titlesec}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[english]{babel}
+\usepackage{times}
+\usepackage{fullpage}
+\usepackage{enumerate}
+
+%Nicer typewritertext
+\renewcommand{\ttdefault}{cmtt}
+
+%Custom environments
+\newcommand{\mysec}[1]{\medskip\noindent{\large{\bf #1.}}}
+\newcommand{\mypar}[1]{\medskip\noindent{\bf #1.}}
+
+%Misc stuff
+\newcommand{\comment}[1]{}
+\newcommand{\debug}[1]{{\bf [DBG: #1]}}
+
+%amsthm package additions
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{claim}{Claim}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{corollary}{Corollary}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{conjecture}{Conjecture}[section]
+\newtheorem{example}{Example}[section]
+
+\theoremstyle{remark}
+\newtheorem{note}{Note}[section]
+\newtheorem{fact}{Fact}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{case}{Case}[section]
+
+%Footnote
+\long\def\symbolfootnote[#1]#2{\begingroup%
+\def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}\endgroup}
+\newcommand{\cfootnote}[2]{\symbolfootnote[#1]{#2}}
+
+%Neater label items.
+\renewcommand{\labelitemi}{\textbf{--}}
+
+%Math Symbols
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\F}{\ensuremath{\mathbb{F}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\G}{\ensuremath{\mathbb{G}}}
+\newcommand{\zo}{\ensuremath{\{0,1\}}}
+\renewcommand{\iff}{\ensuremath{\Leftrightarrow}}
+\newcommand{\Iff}{\ensuremath{\Longleftrightarrow}}
+\newcommand{\xor}{\ensuremath{\oplus}}
+\newcommand{\Xor}{\ensuremath{\bigoplus}}
+\newcommand{\andl}{\ensuremath{\wedge}}
+\newcommand{\orl}{\ensuremath{\vee}}
+\newcommand{\union}{\ensuremath{\cup}}
+\newcommand{\intersect}{\ensuremath{\cap}}
+\newcommand{\Union}{\ensuremath{\bigcup}}
+\newcommand{\Intersect}{\ensuremath{\bigcap}}
+\renewcommand{\implies}{\ensuremath{\Rightarrow}}
+\newcommand{\Implies}{\ensuremath{\Longrightarrow}}
+\newcommand{\deq}{\ensuremath{:=}}
+\renewcommand{\phi}{\ensuremath{\varphi}}
+\newcommand{\dfrom}{\ensuremath{\stackrel{R}{\leftarrow}}}
+\newcommand{\eps}{\ensuremath{\varepsilon}}
+\newcommand{\set}[1]{\ensuremath{\left[#1\right]}}
+\newcommand{\opt}{\ensuremath{\textsc{Opt}}}
+
+%Text in math mode
+\newcommand{\ppoly}[0]{{\rm poly}}
+\newcommand{\poly}[1]{\ensuremath{{\rm poly}\left(#1\right)}}
+\newcommand{\polylog}[1]{\ensuremath{{\rm polylog}\left(#1\right)}}
+\renewcommand{\Pr}{\ensuremath{{\rm Pr}}}
+\renewcommand{\th}{\ensuremath{^{\rm th}}}
+\newcommand{\star}[1]{\ensuremath{#1^*}}
+\newcommand{\exp}{\ensuremath{\mathbb{E}}} %expectation
+
+%Complexity Classes
+\newcommand{\NP}{\ensuremath{\mathbf{NP}}}
+\newcommand{\coNP}{\ensuremath{\mathbf{co{\sf -}NP}}}
+\newcommand{\BPP}{\ensuremath{\mathbf{BPP}}}
+\newcommand{\RP}{\ensuremath{\mathbf{RP}}}
+\newcommand{\PSPACE}{\ensuremath{\mathbf{PSPACE}}}
+\newcommand{\PH}{\ensuremath{\mathbf{PH}}}
+\newcommand{\sharpP}{\ensuremath{\mathbf{\# P}}}
+\newcommand{\E}{\ensuremath{\mathbf{E}}}
+\renewcommand{\P}{\ensuremath{\mathbf{P}}}
+\newcommand{\EXP}{\ensuremath{\mathbf{EXP}}}
+\newcommand{\SAT}{\ensuremath{{\sf SAT}}}
+\newcommand{\TQBF}{\ensuremath{{\sf TQBF}}}
+\newcommand{\psp}{\ensuremath{\P/\ppoly}}
+\newcommand{\logvc}{\textsc{Log-VC}~}
+\newcommand{\logis}{\textsc{Log-IS}~}
+
+%Crypto stuff
+\newcommand{\Exper}{\ensuremath{\mathsf{Exp}}}
+\newcommand{\Funs}{\ensuremath{\mathsf{Funs}}}
+\newcommand{\Adv}{\ensuremath{\mathsf{Adv}}}
+\newcommand{\PRFAdv}{\ensuremath{\mathsf{PRFAdv}}}
