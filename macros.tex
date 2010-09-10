@@ -51,10 +51,15 @@
 %Neater label items.
 \renewcommand{\labelitemi}{\textbf{--}}
 
+%Better \mod support with amstex -- now called \imod
+\makeatletter
+\def\imod#1{\allowbreak\mkern2mu({\operator@font mod}\,\,#1)}
+
 %Math Symbols
 \newcommand{\Z}{\ensuremath{\mathbb{Z}}}
 \newcommand{\F}{\ensuremath{\mathbb{F}}}
 \newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\ring}{\ensuremath{\mathbf{R}}}
 \newcommand{\C}{\ensuremath{\mathbb{C}}}
 \newcommand{\Q}{\ensuremath{\mathbb{Q}}}
 \newcommand{\G}{\ensuremath{\mathbb{G}}}
@@ -77,7 +82,7 @@
 \newcommand{\eps}{\ensuremath{\varepsilon}}
 \newcommand{\set}[1]{\ensuremath{\left[#1\right]}}
 \newcommand{\opt}{\ensuremath{\textsc{Opt}}}
-\newcommand{\innerp}[2]{\ensuremath{\left\langle #1,#2 \right\rangle}}
+\newcommand{\innerp}[2]{\ensuremath{\left\langle#1,#2\right\rangle}}
 
 %Text in math mode
 \newcommand{\ppoly}[0]{{\rm poly}}
