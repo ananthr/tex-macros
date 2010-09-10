@@ -17,8 +17,8 @@
 \renewcommand{\ttdefault}{cmtt}
 
 %Custom environments
-\newcommand{\mysec}[1]{\medskip\noindent{\large{\bf #1.}}}
-\newcommand{\mypar}[1]{\medskip\noindent{\bf #1.}}
+\newcommand{\mysec}[1]{\noindent{\large{\bf #1.}}}
+\newcommand{\mypar}[1]{\noindent{\bf #1.}}
 
 %Misc stuff
 \newcommand{\comment}[1]{}
@@ -77,6 +77,7 @@
 \newcommand{\eps}{\ensuremath{\varepsilon}}
 \newcommand{\set}[1]{\ensuremath{\left[#1\right]}}
 \newcommand{\opt}{\ensuremath{\textsc{Opt}}}
+\newcommand{\innerp}[2]{\ensuremath{\left\langle #1,#2 \right\rangle}}
 
 %Text in math mode
 \newcommand{\ppoly}[0]{{\rm poly}}
@@ -84,8 +85,8 @@
 \newcommand{\polylog}[1]{\ensuremath{{\rm polylog}\left(#1\right)}}
 \renewcommand{\Pr}{\ensuremath{{\rm Pr}}}
 \renewcommand{\th}{\ensuremath{^{\rm th}}}
-\newcommand{\star}[1]{\ensuremath{#1^*}}
-\newcommand{\exp}{\ensuremath{\mathbb{E}}} %expectation
+\newcommand{\mystar}[1]{\ensuremath{#1^*}}
+\newcommand{\myexp}{\ensuremath{\mathbb{E}}} %expectation
 
 %Complexity Classes
 \newcommand{\NP}{\ensuremath{\mathbf{NP}}}
