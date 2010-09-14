@@ -55,6 +55,14 @@
 \makeatletter
 \def\imod#1{\allowbreak\mkern2mu({\operator@font mod}\,\,#1)}
 
+%Tab environment for algorithms
+\newenvironment{RawAlg}{\begin{tabbing}%
+000 \= 000 \= 000 \= 000 \= 000 \= 000 \= 000 \= 000 \= 000 \= 000 \= \kill}%
+{\end{tabbing}}
+\newenvironment{alg}
+{\begin{quote}\begin{RawAlg}}
+{\end{RawAlg} \end{quote}}
+
 %Math Symbols
 \newcommand{\Z}{\ensuremath{\mathbb{Z}}}
 \newcommand{\F}{\ensuremath{\mathbb{F}}}
