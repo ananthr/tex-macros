@@ -4,27 +4,37 @@
 %  ananthr@cs.stanford.edu
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% -- uncomment to enable centered section titles --
 %\usepackage[bf, center]{titlesec}
-%uncomment to enable centered section titles
 
 \usepackage[english]{babel}
 \usepackage{amsmath,amssymb,amsthm}
-\usepackage{times}
+%\usepackage{times}
 \usepackage{fullpage}
 \usepackage{enumerate}
 
-%Nicer typewritertext
+% -- nicer typewriter text --
 \renewcommand{\ttdefault}{cmtt}
 
-%Custom environments
-\newcommand{\mysec}[1]{\noindent{\large{\bf #1.}}}
-\newcommand{\mypar}[1]{\noindent{\bf #1.}}
+% -- custom environments --
+\newcommand{\mysec}[1]{\noindent{\large{\bf #1.}} \bigskip}
+\newcommand{\mypar}[1]{\noindent{\bf #1.} \medskip}
 
-%Misc stuff
+% -- better template for solutions and sub-parts in solutions --
+\newcounter{answercounter}
+\newcounter{subcounter}
+\stepcounter{subcounter}
+\newcommand{\answer}[1]{{\bf Answer
+\theanswercounter.}\stepcounter{answercounter}\setcounter{subcounter}{1}
+#1 \begin{flushright}\qed \end{flushright} \bigskip}
+\newcommand{\subanswer}[1]{{\bf
+(\alph{subcounter})}\stepcounter{subcounter} #1 \medskip}
+
+% -- misc stuff --
 \newcommand{\comment}[1]{}
 \newcommand{\debug}[1]{{\bf [DBG: #1]}}
 
-%amsthm package additions
+% -- amsthm package additions --
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}{Lemma}[section]
@@ -43,19 +53,19 @@
 \newtheorem{remark}{Remark}[section]
 \newtheorem{case}{Case}[section]
 
-%Footnote
+% -- footnote with symbols --
 \long\def\symbolfootnote[#1]#2{\begingroup%
 \def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}\endgroup}
 \newcommand{\cfootnote}[2]{\symbolfootnote[#1]{#2}}
 
-%Neater label items.
+% -- neater label items --
 \renewcommand{\labelitemi}{\textbf{--}}
 
-%Better \mod support with amstex -- now called \imod
+% -- Better \mod support with amstex -- now called \imod --
 \makeatletter
 \def\imod#1{\allowbreak\mkern2mu({\operator@font mod}\,\,#1)}
 
-%Tab environment for algorithms
+% -- tabbed environment for algorithm descriptions --
 \newenvironment{RawAlg}{\begin{tabbing}%
 000 \= 000 \= 000 \= 000 \= 000 \= 000 \= 000 \= 000 \= 000 \= 000 \= \kill}%
 {\end{tabbing}}
@@ -63,7 +73,7 @@
 {\begin{quote}\begin{RawAlg}}
 {\end{RawAlg} \end{quote}}
 
-%Math Symbols
+% -- math symbols -- 
 \newcommand{\Z}{\ensuremath{\mathbb{Z}}}
 \newcommand{\F}{\ensuremath{\mathbb{F}}}
 \newcommand{\R}{\ensuremath{\mathbb{R}}}
@@ -91,8 +101,9 @@
 \newcommand{\set}[1]{\ensuremath{\left[#1\right]}}
 \newcommand{\opt}{\ensuremath{\textsc{Opt}}}
 \newcommand{\innerp}[2]{\ensuremath{\left\langle#1,#2\right\rangle}}
+\newcommand{\norm}[1]{\ensuremath{\left\|#1 \right\|}}
 
-%Text in math mode
+% -- text in math mode -- 
 \newcommand{\ppoly}[0]{{\rm poly}}
 \newcommand{\poly}[1]{\ensuremath{{\rm poly}\left(#1\right)}}
 \newcommand{\polylog}[1]{\ensuremath{{\rm polylog}\left(#1\right)}}
@@ -101,7 +112,7 @@
 \newcommand{\mystar}[1]{\ensuremath{#1^*}}
 \newcommand{\myexp}{\ensuremath{\mathbb{E}}} %expectation
 
-%Complexity Classes
+% -- complexity classes -- 
 \newcommand{\NP}{\ensuremath{\mathbf{NP}}}
 \newcommand{\coNP}{\ensuremath{\mathbf{co{\sf -}NP}}}
 \newcommand{\BPP}{\ensuremath{\mathbf{BPP}}}
@@ -118,8 +129,12 @@
 \newcommand{\logvc}{\textsc{Log-VC}~}
 \newcommand{\logis}{\textsc{Log-IS}~}
 
-%Crypto stuff
+% -- crypto related stuff -- 
 \newcommand{\Exper}{\ensuremath{\mathsf{Exp}}}
 \newcommand{\Funs}{\ensuremath{\mathsf{Funs}}}
 \newcommand{\Adv}{\ensuremath{\mathsf{Adv}}}
 \newcommand{\PRFAdv}{\ensuremath{\mathsf{PRFAdv}}}
+\newcommand{\TrapGen}{\ensuremath{\mathsf{TrapGen}}}
+% -- defining script adversaries
+\newcommand{\A}{\ensuremath{\mathcal{A}}}
+\newcommand{\B}{\ensuremath{\mathcal{B}}}
