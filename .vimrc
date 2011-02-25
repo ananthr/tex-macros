@@ -23,9 +23,9 @@ filetype plugin on
 filetype indent on
 
 "expand tabs for python
-if has('autocmd')
-  autocmd filetype python expandtab
-endif
+"if has('autocmd')
+"  autocmd filetype python expandtab
+"endif
 
 set mouse=a "enable mouse
 set pastetoggle=<Ctrl+,> "change mode when pasting outside text to
@@ -85,3 +85,7 @@ set clipboard=unnamed
 "au BufWinEnter *.* silent loadview
 "au BufRead *.todo set filetype=todo 
 "au! Syntax todo source /Users/ananthr/.vim/todo.vim
+
+"Set statusline
+set statusline=%<%=[%l,%c%V]\ %p%%\ of\ %L\ lines\ %m%r\ %f\ %y\ \ 
+set laststatus=2
