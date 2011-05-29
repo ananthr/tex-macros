@@ -1,8 +1,10 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  Custom LaTeX additions
 %  Ananth Raghunathan
 %  ananthr@cs.stanford.edu
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Also available at:
+%  http://github.com/ananthr/tex-macros/blob/master/macros.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % -- uncomment to enable centered section titles --
 %\usepackage[bf, center]{titlesec}
@@ -13,7 +15,7 @@
 \usepackage{hyperref}
 
 % -- various font styles --
-\usepackage{times}
+%\usepackage{times}
 %\usepackage{sansmath}
 %\sansmath
 %\usepackage{mathptmx}
@@ -40,6 +42,9 @@
 \newcommand{\subanswer}[1]{{\bf
 (\alph{subcounter})}\stepcounter{subcounter} #1 \medskip}
 
+% -- my line, for delineating sections --
+\newcommand{\myline}{\begin{center}  --------- \S\ --------- \end{center}}
+
 % -- misc stuff --
 \newcommand{\comment}[1]{}
 \newcommand{\debug}[1]{{\bf [DBG: #1]}}
@@ -50,6 +55,7 @@
 \newtheorem{claim}{Claim}[section]
 \newtheorem{proposition}{Proposition}[section]
 \newtheorem{corollary}{Corollary}[section]
+\newtheorem{assumption}{Assumption}[section]
 
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
@@ -57,10 +63,10 @@
 \newtheorem{example}{Example}[section]
 
 \theoremstyle{remark}
-\newtheorem{note}{Note}[section]
-\newtheorem{fact}{Fact}[section]
-\newtheorem{remark}{Remark}[section]
-\newtheorem{case}{Case}[section]
+\newtheorem{note}{Note}
+\newtheorem{fact}{Fact}
+\newtheorem{remark}{Remark}
+\newtheorem{case}{Case}
 
 % -- footnote with symbols --
 \long\def\symbolfootnote[#1]#2{\begingroup%
@@ -145,6 +151,9 @@
 \newcommand{\PRFAdv}{\ensuremath{\mathsf{PRFAdv}}}
 \newcommand{\TrapGen}{\ensuremath{\mathsf{TrapGen}}}
 \newcommand{\kSIS}{$k$-SIS\ } %k-SIS macro
-% -- defining script adversaries
+
+% -- defining script adversaries and other things
 \newcommand{\A}{\ensuremath{\mathcal{A}}}
 \newcommand{\B}{\ensuremath{\mathcal{B}}}
+\renewcommand{\O}{\ensuremath{\mathcal{O}}}
+\newcommand{\Sim}{\ensuremath{\mathcal{S}}}
