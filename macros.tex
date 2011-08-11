@@ -30,6 +30,8 @@
 % -- custom environments --
 \newcommand{\mysec}[1]{\noindent{\large{\bf #1.}} \bigskip}
 \newcommand{\mypar}[1]{\noindent{\bf #1.} \medskip}
+\newcommand{\myipar}[1]{\noindent \textbf{\emph{#1.}} \medskip}
+\newcommand{\mybf}[1]{\medskip \noindent{\bf #1.}\ }
 \newcommand{\myendsec}{\begin{center} {\bf ------------ $\S$ ------------} \end{center}}
 
 % -- better template for solutions and sub-parts in solutions --
@@ -151,9 +153,15 @@
 \newcommand{\PRFAdv}{\ensuremath{\mathsf{PRFAdv}}}
 \newcommand{\TrapGen}{\ensuremath{\mathsf{TrapGen}}}
 \newcommand{\kSIS}{$k$-SIS\ } %k-SIS macro
+\newcommand{\pk}{\ensuremath \mathsf{pk}} % public key
+\newcommand{\sk}{\ensuremath \mathsf{sk}} % secret key
+\newcommand{\Enc}{\ensuremath \mathsf{Enc}} % Encryption
+\newcommand{\Dec}{\ensuremath \mathsf{Dec}} % Decryption
+
 
 % -- defining script adversaries and other things
 \newcommand{\A}{\ensuremath{\mathcal{A}}}
 \newcommand{\B}{\ensuremath{\mathcal{B}}}
 \renewcommand{\O}{\ensuremath{\mathcal{O}}}
 \newcommand{\Sim}{\ensuremath{\mathcal{S}}}
+\newcommand{\M}{\ensuremath{\mathcal{M}}}
