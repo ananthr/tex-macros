@@ -12,7 +12,15 @@
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}
 \usepackage{amsmath,amssymb,amsthm}
-\usepackage{hyperref}
+\usepackage[colorlinks=true, linkcolor=blue]{hyperref}
+
+% -- using autoref nicely
+\def\sectionautorefname{Section}
+\def\claimautorefname{Claim}
+\def\theoremautorefname{Theorem}
+\def\lemmaautorefname{Lemma}
+\def\subsectionautorefname{Subsection}
+\def\figureautorefname{Figure}
 
 % -- various font styles --
 %\usepackage{times}
@@ -155,8 +163,11 @@
 \newcommand{\kSIS}{$k$-SIS\ } %k-SIS macro
 \newcommand{\pk}{\ensuremath \mathsf{pk}} % public key
 \newcommand{\sk}{\ensuremath \mathsf{sk}} % secret key
+\newcommand{\id}{\ensuremath \mathsf{id}} % secret key
 \newcommand{\Enc}{\ensuremath \mathsf{Enc}} % Encryption
 \newcommand{\Dec}{\ensuremath \mathsf{Dec}} % Decryption
+\newcommand{\lperp}{\ensuremath{\Lambda^\perp_q}} 
+\newcommand{\lperpq}[1]{\ensuremath{\Lambda^\perp_{#1}}}
 
 
 % -- defining script adversaries and other things
