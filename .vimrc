@@ -22,13 +22,14 @@ filetype on "detect filetype and apply file specific rules
 filetype plugin on
 filetype indent on
 
+
 "expand tabs for python
 "if has('autocmd')
 "  autocmd filetype python expandtab
 "endif
 
 set mouse=a "enable mouse
-set pastetoggle=<Ctrl+,> "change mode when pasting outside text to
+set pastetoggle=<C-,> "change mode when pasting outside text to
                          "preserve indentation 
 
 "Forcing myself to use hjkl
@@ -89,3 +90,21 @@ set clipboard=unnamed
 "Set statusline
 set statusline=%<%=[%l,%c%V]\ %p%%\ of\ %L\ lines\ %m%r\ %f\ %y\ \ 
 set laststatus=2
+
+"colorscheme
+"let g:solarized_termcolors=16
+"set background=dark
+"colorscheme solarized
+
+"Better tab control
+" {Alt + Shift + ]} Switch to the next tab to the right
+map <A-}> :tabnext<CR>
+map! <A-}> <ESC>:tabnext<CR>i
+
+" {Alt + Shift + [} Switch to the next tab to the left
+map <A-{> :tabprevious<CR>
+map! <A-{> <ESC>:tabprevious<CR>i
+
+" {Ctrl + Shift + t} Create a new tab
+map <C-S-T> :tabnew<CR>
+map! <C-S-T> <ESC>:tabnew<CR>
