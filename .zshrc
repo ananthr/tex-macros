@@ -1,7 +1,9 @@
 source ~/.aliases
 autoload -U colors && colors
+clear
 
-PS1="%{$terminfo[bold]$fg[magenta]%}%h%{$reset_color%}%{$terminfo[bold]$fg[yellow]%}%~%{$reset_color%} "
+#PS1="%{$terminfo[bold]$fg[yellow]%}%T%{$terminfo[bold]$fg[magenta]%} %3c%{$terminfo[bold]$fg[black]%};%{$reset_color%}"
+PS1="%{$terminfo[bold]$fg[blue]%}%T%{$terminfo[bold]$fg[green]%}•%{$fg[magenta]%}%3c%{$terminfo[bold]$fg[black]%}•%{$reset_color%}"
 
 #	if [[ ${EUID} == 0 ]] ; then
 #		PROMPT='\[\033[01;31m\]\h\[\033[01;34m\] \W \$\[\033[00m\] '
