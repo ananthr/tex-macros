@@ -41,9 +41,10 @@ nnoremap <right> <nop>
 "inoremap <down> <nop>
 "inoremap <left> <nop>
 "inoremap <right> <nop>
+
 "more intelligent up-down motion
-"nnoremap j gj
-"nnoremap k gk 
+nnoremap j gj
+nnoremap k gk 
 
 "saving one keystroke :-)
 nnoremap ; :
