@@ -11,6 +11,7 @@
 
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}
+\usepackage{color}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage[colorlinks=true, linkcolor=blue]{hyperref}
 \usepackage{fullpage}
@@ -56,7 +57,7 @@
 
 % -- misc stuff --
 \newcommand{\comment}[1]{}
-\newcommand{\debug}[1]{{\bf [DBG: #1]}}
+\newcommand{\debug}[1]{{\bf [}\textcolor{blue}{{\bf Comment: }}#1{\bf ]}}
 
 % -- amsthm package additions --
 \newtheorem{theorem}{Theorem}[section]
@@ -171,6 +172,7 @@
 \newcommand{\Dec}{\ensuremath \mathsf{Dec}} % decryption
 \newcommand{\lperp}{\ensuremath{\Lambda^\perp_q}} % lambda perp
 \newcommand{\lperpq}[1]{\ensuremath{\Lambda^\perp_{#1}}} 
+\newcommand{\Coset}{\ensuremath{\mathbf{C}}}
 
 % -- defining script adversaries and other things
 \newcommand{\A}{\ensuremath{\mathcal{A}}}
