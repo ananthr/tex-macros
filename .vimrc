@@ -43,8 +43,8 @@ nnoremap <right> <nop>
 "inoremap <right> <nop>
 
 "more intelligent up-down motion
-nnoremap j gj
-nnoremap k gk 
+"nnoremap j gj
+"nnoremap k gk 
 
 "saving one keystroke :-)
 nnoremap ; :
@@ -55,12 +55,16 @@ au FocusLost * :wa
 nnoremap <leader>q gqip
 "easier than <esc>
 inoremap jj <ESC>
+inoremap kk <ESC>
 
 "Autocomplete for TeX (mainly)
 inoremap $ $$<Left>
 inoremap ( ()<Left>
 inoremap [ []<Left>
 inoremap { {}<Left>
+
+"Remapping 0 behavior
+nnoremap 0 0i
 
 "Switch between buffers better in normal/insert modes
 nnoremap <C-j> :tabp<Enter>
@@ -109,3 +113,8 @@ map! <A-{> <ESC>:tabprevious<CR>i
 " {Ctrl + Shift + t} Create a new tab
 map <C-S-T> :tabnew<CR>
 map! <C-S-T> <ESC>:tabnew<CR>
+
+source /Users/ananthr/.vim/ftplugin/vimroom.vim
+let g:vimroom_width=100
+let g:vimroom_sidebar_height=0
+let g:vimroom_min_sidebar_width=0
