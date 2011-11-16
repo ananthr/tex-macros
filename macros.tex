@@ -13,9 +13,10 @@
 \usepackage[english]{babel}
 \usepackage{color}
 \usepackage{amsmath,amssymb,amsthm}
-\usepackage[colorlinks=true, linkcolor=blue]{hyperref}
+\usepackage[colorlinks=true, linkcolor=blue, citecolor=blue, backref=section]{hyperref}
 \usepackage{fullpage}
 \usepackage{enumerate}
+\usepackage{verbatim}
 
 % -- using autoref nicely; requires hyperref
 \def\sectionautorefname{Section}
@@ -34,6 +35,7 @@
 
 % -- nicer typewriter text --
 \renewcommand{\ttdefault}{cmtt}
+\renewcommand{\sfdefault}{cmss}
 
 % -- custom header/footer stuff --
 \newcommand{\mysec}[1]{\noindent{\large{\bf #1}} \bigskip}
@@ -60,8 +62,8 @@
 (\alph{subcounter})}\stepcounter{subcounter} #1 \medskip}
 
 % -- misc stuff --
-\newcommand{\comment}[1]{}
-\newcommand{\debug}[1]{{\bf [}\textcolor{blue}{{\bf Comment: }}#1{\bf ]}}
+%\newcommand{\comment}[1]{}
+\newcommand{\debug}[1]{$\big($\textcolor{red}{{\bf Comment: }#1}$\big)$}
 
 % -- amsthm package additions --
 \newtheorem{theorem}{Theorem}[section]
@@ -135,6 +137,19 @@
 \newcommand{\opt}{\ensuremath{\textsc{Opt}}}
 \newcommand{\innerp}[2]{\ensuremath{\left\langle#1,#2\right\rangle}} % inner product
 \newcommand{\norm}[1]{\ensuremath{\left\|#1 \right\|}} % vector norm
+\newcommand{\gsnorm}[1]{\ensuremath{\|\widetilde{#1}\|}} % gram schmidt norm
+\newcommand{\transpose}[1]{\ensuremath{{#1}^{\top}}}
+\newcommand{\divides}{\ensuremath{\,|\,}} % number theory divides 
+
+% -- bold math symbols, for some reason --
+\newcommand{\bolde}{\ensuremath{\mathbf{e}}}
+\newcommand{\boldd}{\ensuremath{\mathbf{d}}}
+\newcommand{\boldz}{\ensuremath{\mathbf{z}}}
+\newcommand{\bolda}{\ensuremath{\mathbf{a}}}
+\newcommand{\boldv}{\ensuremath{\mathbf{v}}}
+\newcommand{\boldt}{\ensuremath{\mathbf{t}}}
+\newcommand{\boldu}{\ensuremath{\mathbf{u}}}
+\newcommand{\boldx}{\ensuremath{\mathbf{x}}}
 
 % -- text in math mode -- 
 \newcommand{\ppoly}[0]{{\rm poly}}
@@ -169,6 +184,7 @@
 \newcommand{\PRFAdv}{\ensuremath{\mathsf{PRFAdv}}} % prf advantage
 \newcommand{\TrapGen}{\ensuremath{\mathsf{TrapGen}}} 
 \newcommand{\kSIS}{$k$-SIS\ } %k-SIS macro
+\newcommand{\pp}{\ensuremath \mathsf{pp}} % public params
 \newcommand{\pk}{\ensuremath \mathsf{pk}} % public key
 \newcommand{\sk}{\ensuremath \mathsf{sk}} % secret key
 \newcommand{\id}{\ensuremath \mathsf{id}} % secret key
@@ -177,6 +193,7 @@
 \newcommand{\lperp}{\ensuremath{\Lambda^\perp_q}} % lambda perp
 \newcommand{\lperpq}[1]{\ensuremath{\Lambda^\perp_{#1}}} 
 \newcommand{\Coset}{\ensuremath{\mathbf{C}}}
+\newcommand{\pair}{\ensuremath{\hat{e}}} % Weil pairing on Elliptic curves
 
 % -- defining script adversaries and other things
 \newcommand{\A}{\ensuremath{\mathcal{A}}}
