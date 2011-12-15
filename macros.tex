@@ -13,10 +13,21 @@
 \usepackage[english]{babel}
 \usepackage{color}
 \usepackage{amsmath,amssymb,amsthm}
-\usepackage[colorlinks=true, linkcolor=blue, citecolor=blue, backref=section]{hyperref}
+\usepackage[colorlinks=true, linkcolor=blue, citecolor=blue]{hyperref}
+% -- only use if you want back references --
+%\usepackage[colorlinks=true, linkcolor=blue, citecolor=blue, backref=section]{hyperref}
 \usepackage{fullpage}
 \usepackage{enumerate}
 \usepackage{verbatim}
+
+% -- place /squish in the beginning of itemize to squish
+% -- end with /squishend
+\newcommand{\squish}{
+      \setlength{\topsep}{0pt}
+      \setlength{\itemsep}{0ex}
+      \vspace{-1ex}
+      \setlength{\parskip}{0pt}}
+\newcommand{\squishend}{\vskip -1ex\relax}
 
 % -- using autoref nicely; requires hyperref
 \def\sectionautorefname{Section}
@@ -25,7 +36,9 @@
 \def\lemmaautorefname{Lemma}
 \def\subsectionautorefname{Section}
 \def\figureautorefname{Figure}
-\def\corollaryautorefname{Corollary}
+\def\equationautorefname{Eq.}
+\def\appendixautorefname{App.}
+\def\footnoteautorefname{Footnote}
 
 % -- various font styles --
 %\usepackage{times}
@@ -64,7 +77,8 @@
 
 % -- misc stuff --
 %\newcommand{\comment}[1]{}
-\newcommand{\debug}[1]{$\big($\textcolor{red}{{\bf Comment: }#1}$\big)$}
+%\newcommand{\debug}[1]{$\big($\textcolor{red}{{\bf Comment: }#1}$\big)$}
+\newcommand{\debug}[1]{}
 
 % -- amsthm package additions --
 \newtheorem{theorem}{Theorem}[section]
@@ -95,7 +109,7 @@
 \newcommand{\cfootnote}[2]{\symbolfootnote[#1]{#2}}
 
 % -- neater label items --
-\renewcommand{\labelitemi}{\textbf{--}}
+%\renewcommand{\labelitemi}{\textbf{--}}
 
 % -- Better \mod support with amstex -- now called \imod --
 \makeatletter
@@ -138,6 +152,7 @@
 \newcommand{\opt}{\ensuremath{\textsc{Opt}}}
 \newcommand{\innerp}[2]{\ensuremath{\left\langle#1,#2\right\rangle}} % inner product
 \newcommand{\norm}[1]{\ensuremath{\left\|#1 \right\|}} % vector norm
+\newcommand{\maxnorm}[1]{\ensuremath{\left\|#1 \right\|}} % max norm
 \newcommand{\gsnorm}[1]{\ensuremath{\|\widetilde{#1}\|}} % gram schmidt norm
 \newcommand{\transpose}[1]{\ensuremath{{#1}^{\top}}}
 \newcommand{\divides}{\ensuremath{\,|\,}} % number theory divides 
@@ -152,6 +167,7 @@
 \newcommand{\boldt}{\ensuremath{\mathbf{t}}}
 \newcommand{\boldu}{\ensuremath{\mathbf{u}}}
 \newcommand{\boldx}{\ensuremath{\mathbf{x}}}
+\newcommand{\boldy}{\ensuremath{\mathbf{y}}}
 \newcommand{\boldB}{\ensuremath{\mathbf{B}}}
 \newcommand{\boldzero}{\ensuremath{\mathbf{0}}}
 
