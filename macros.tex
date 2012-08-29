@@ -30,6 +30,7 @@
 \newcommand{\squishend}{\vskip -1ex\relax}
 
 % -- using autoref nicely; requires hyperref
+\newcommand{\secref}[1]{\hyperref[#1]{\textbf{\S}\ref*{#1}}} % nice section ref
 \def\sectionautorefname{Section}
 \def\claimautorefname{Claim}
 \def\theoremautorefname{Theorem}
@@ -123,6 +124,10 @@
 {\begin{quote}\begin{RawAlg}}
 {\end{RawAlg} \end{quote}}
 
+% -- author notes --
+\newcommand{\authnote}[2]{\begin{center}\fbox{\begin{minipage}{5.0in}
+\textbf{\textcolor{magenta}{#1 says:}} #2\end{minipage}}\end{center}}
+
 % -- math symbols -- 
 \newcommand{\Z}{\ensuremath{\mathbb{Z}}} % integers
 \newcommand{\F}{\ensuremath{\mathbb{F}}} % field
@@ -145,6 +150,7 @@
 \renewcommand{\implies}{\ensuremath{\Rightarrow}}
 \newcommand{\Implies}{\ensuremath{\Longrightarrow}}
 \newcommand{\deq}{\ensuremath{:=}} % defined as equal to
+%\newcommand{\deq}{\ensuremath{\stackrel{\sf def}{=}}} % defined as equal to
 \renewcommand{\phi}{\ensuremath{\varphi}}
 \newcommand{\dfrom}{\ensuremath{\stackrel{R}{\leftarrow}}} % drawn from 
 \newcommand{\eps}{\ensuremath{\varepsilon}}
@@ -159,21 +165,92 @@
 \newcommand{\st}[1]{\ensuremath{{#1}^*}}
 
 % -- bold math symbols, for some reason --
-\newcommand{\bolde}{\ensuremath{\mathbf{e}}}
-\newcommand{\boldc}{\ensuremath{\mathbf{c}}}
-\newcommand{\boldd}{\ensuremath{\mathbf{d}}}
-\newcommand{\boldz}{\ensuremath{\mathbf{z}}}
-\newcommand{\bolda}{\ensuremath{\mathbf{a}}}
-\newcommand{\boldv}{\ensuremath{\mathbf{v}}}
-\newcommand{\boldt}{\ensuremath{\mathbf{t}}}
-\newcommand{\boldu}{\ensuremath{\mathbf{u}}}
-\newcommand{\boldx}{\ensuremath{\mathbf{x}}}
-\newcommand{\boldy}{\ensuremath{\mathbf{y}}}
-\newcommand{\boldB}{\ensuremath{\mathbf{B}}}
-\newcommand{\boldzero}{\ensuremath{\mathbf{0}}}
+\newcommand{\boldstar}{\ensuremath{\mathbf{*}}}
+\newcommand{\bolda}{\ensuremath{\boldsymbol{a}}}
+\newcommand{\boldb}{\ensuremath{\boldsymbol{b}}}
+\newcommand{\boldc}{\ensuremath{\boldsymbol{c}}}
+\newcommand{\boldd}{\ensuremath{\boldsymbol{d}}}
+\newcommand{\bolde}{\ensuremath{\boldsymbol{e}}}
+\newcommand{\boldf}{\ensuremath{\boldsymbol{f}}}
+\newcommand{\boldg}{\ensuremath{\boldsymbol{g}}}
+\newcommand{\boldh}{\ensuremath{\boldsymbol{h}}}
+\newcommand{\boldi}{\ensuremath{\boldsymbol{i}}}
+\newcommand{\boldj}{\ensuremath{\boldsymbol{j}}}
+\newcommand{\boldk}{\ensuremath{\boldsymbol{k}}}
+\newcommand{\boldl}{\ensuremath{\boldsymbol{l}}}
+\newcommand{\boldm}{\ensuremath{\boldsymbol{m}}}
+\newcommand{\boldn}{\ensuremath{\boldsymbol{n}}}
+\newcommand{\boldo}{\ensuremath{\boldsymbol{o}}}
+\newcommand{\boldp}{\ensuremath{\boldsymbol{p}}}
+\newcommand{\boldq}{\ensuremath{\boldsymbol{q}}}
+\newcommand{\boldr}{\ensuremath{\boldsymbol{r}}}
+\newcommand{\bolds}{\ensuremath{\boldsymbol{s}}}
+\newcommand{\boldt}{\ensuremath{\boldsymbol{t}}}
+\newcommand{\boldu}{\ensuremath{\boldsymbol{u}}}
+\newcommand{\boldv}{\ensuremath{\boldsymbol{v}}}
+\newcommand{\boldw}{\ensuremath{\boldsymbol{w}}}
+\newcommand{\boldx}{\ensuremath{\boldsymbol{x}}}
+\newcommand{\boldy}{\ensuremath{\boldsymbol{y}}}
+\newcommand{\boldz}{\ensuremath{\boldsymbol{z}}}
+\newcommand{\boldzero}{\ensuremath{\boldsymbol{0}}}
+\newcommand{\boldone}{\ensuremath{\boldsymbol{1}}}
+
+\newcommand{\boldA}{\ensuremath{\boldsymbol{A}}}
+\newcommand{\boldB}{\ensuremath{\boldsymbol{B}}}
+\newcommand{\boldC}{\ensuremath{\boldsymbol{C}}}
+\newcommand{\boldD}{\ensuremath{\boldsymbol{D}}}
+\newcommand{\boldE}{\ensuremath{\boldsymbol{E}}}
+\newcommand{\boldF}{\ensuremath{\boldsymbol{F}}}
+\newcommand{\boldG}{\ensuremath{\boldsymbol{G}}}
+\newcommand{\boldH}{\ensuremath{\boldsymbol{H}}}
+\newcommand{\boldI}{\ensuremath{\boldsymbol{I}}}
+\newcommand{\boldJ}{\ensuremath{\boldsymbol{J}}}
+\newcommand{\boldK}{\ensuremath{\boldsymbol{K}}}
+\newcommand{\boldL}{\ensuremath{\boldsymbol{L}}}
+\newcommand{\boldM}{\ensuremath{\boldsymbol{M}}}
+\newcommand{\boldN}{\ensuremath{\boldsymbol{N}}}
+\newcommand{\boldO}{\ensuremath{\boldsymbol{O}}}
+\newcommand{\boldP}{\ensuremath{\boldsymbol{P}}}
+\newcommand{\boldQ}{\ensuremath{\boldsymbol{Q}}}
+\newcommand{\boldR}{\ensuremath{\boldsymbol{R}}}
+\newcommand{\boldS}{\ensuremath{\boldsymbol{S}}}
+\newcommand{\boldT}{\ensuremath{\boldsymbol{T}}}
+\newcommand{\boldU}{\ensuremath{\boldsymbol{U}}}
+\newcommand{\boldV}{\ensuremath{\boldsymbol{V}}}
+\newcommand{\boldW}{\ensuremath{\boldsymbol{W}}}
+\newcommand{\boldX}{\ensuremath{\boldsymbol{X}}}
+\newcommand{\boldY}{\ensuremath{\boldsymbol{Y}}}
+\newcommand{\boldZ}{\ensuremath{\boldsymbol{Z}}}
+
+\newcommand{\calA}{\ensuremath{\mathcal{A}}}
+\newcommand{\calB}{\ensuremath{\mathcal{B}}}
+\newcommand{\calC}{\ensuremath{\mathcal{C}}}
+\newcommand{\calD}{\ensuremath{\mathcal{D}}}
+\newcommand{\calE}{\ensuremath{\mathcal{E}}}
+\newcommand{\calF}{\ensuremath{\mathcal{F}}}
+\newcommand{\calG}{\ensuremath{\mathcal{G}}}
+\newcommand{\calH}{\ensuremath{\mathcal{H}}}
+\newcommand{\calI}{\ensuremath{\mathcal{I}}}
+\newcommand{\calJ}{\ensuremath{\mathcal{J}}}
+\newcommand{\calK}{\ensuremath{\mathcal{K}}}
+\newcommand{\calL}{\ensuremath{\mathcal{L}}}
+\newcommand{\calM}{\ensuremath{\mathcal{M}}}
+\newcommand{\calN}{\ensuremath{\mathcal{N}}}
+\newcommand{\calO}{\ensuremath{\mathcal{O}}}
+\newcommand{\calP}{\ensuremath{\mathcal{P}}}
+\newcommand{\calQ}{\ensuremath{\mathcal{Q}}}
+\newcommand{\calR}{\ensuremath{\mathcal{R}}}
+\newcommand{\calS}{\ensuremath{\mathcal{S}}}
+\newcommand{\calT}{\ensuremath{\mathcal{T}}}
+\newcommand{\calU}{\ensuremath{\mathcal{U}}}
+\newcommand{\calV}{\ensuremath{\mathcal{V}}}
+\newcommand{\calW}{\ensuremath{\mathcal{W}}}
+\newcommand{\calX}{\ensuremath{\mathcal{X}}}
+\newcommand{\calY}{\ensuremath{\mathcal{Y}}}
+\newcommand{\calZ}{\ensuremath{\mathcal{Z}}}
 
 % -- text in math mode -- 
-\newcommand{\ppoly}[0]{{\rm poly}}
+\newcommand{\textpoly}[0]{{\rm poly}}
 \newcommand{\poly}[1]{\ensuremath{{\rm poly}\left(#1\right)}}
 \newcommand{\polylog}[1]{\ensuremath{{\rm polylog}\left(#1\right)}}
 \renewcommand{\Pr}{\ensuremath{{\rm Pr}}} % probability
@@ -215,10 +292,3 @@
 \newcommand{\lperpq}[1]{\ensuremath{\Lambda^\perp_{#1}}} 
 \newcommand{\Coset}{\ensuremath{\mathbf{C}}}
 \newcommand{\pair}{\ensuremath{\hat{e}}} % Weil pairing on Elliptic curves
-
-% -- defining script adversaries and other things
-\newcommand{\A}{\ensuremath{\mathcal{A}}}
-\newcommand{\B}{\ensuremath{\mathcal{B}}}
-\renewcommand{\O}{\ensuremath{\mathcal{O}}}
-\newcommand{\Sim}{\ensuremath{\mathcal{S}}}
-\newcommand{\M}{\ensuremath{\mathcal{M}}}
