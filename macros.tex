@@ -100,6 +100,10 @@
 \newtheorem{remark}{Remark}
 \newtheorem{case}{Case}
 
+% -- better proof environment --
+%\renewenvironment{proof}{\begin{trivlist} \item[\hspace{\labelsep}{\bf
+%\noindent Proof.\/}] }{\qedsymb\end{trivlist}}
+
 % -- better QED symbol --
 %\renewcommand{\qedsymbol}{\ensuremath{\blackrectangle}}
 \renewcommand{\qedsymbol}{\hspace{1pt}\rule[-1pt]{5pt}{9pt}}
@@ -117,18 +121,31 @@
 \def\imod#1{\allowbreak\mkern2mu({\operator@font mod}\,\,#1)}
 
 % -- tabbed environment for algorithm descriptions --
+\newenvironment{vbx}{\vbox\bgroup}{\egroup}
 \newenvironment{RawAlg}{\begin{tabbing}%
-000 \= 000 \= 000 \= 000 \= 000 \= 000 \= 000 \= 000 \= 000 \= 000 \= \kill}%
+000000 \= 000 \= 000 \= 000 \= 000 \= 000 \= 000 \= 000 \= 000 \= 000 \= \kill}%
 {\end{tabbing}}
+
 \newenvironment{alg}
 {\begin{quote}\begin{RawAlg}}
 {\end{RawAlg} \end{quote}}
 
+% -- for shading text --
+% usage is: \colorbox{mygray}{Shaded text goes here}
+\usepackage{xcolor}
+\usepackage{framed}
+\colorlet{shadecolor}{gray!50}
+\definecolor{mygray}{gray}{0.90}
+
+
 % -- author notes --
 \newcommand{\authnote}[2]{\begin{center}\fbox{\begin{minipage}{5.0in}
 \textbf{\textcolor{magenta}{#1 says:}} #2\end{minipage}}\end{center}}
+\newcommand{\Ananth}[1]{\begin{center} \framebox{ \parbox{ 15cm }
+{\textcolor[rgb]{0.1,0.3,0.7}{{\bf Ananth:} #1}}} \end{center}}
 
 % -- math symbols -- 
+\newcommand{\ME}[1]{\mathbf{H}_{\infty}\! \left( #1 \right)} % min-entropy
 \newcommand{\Z}{\ensuremath{\mathbb{Z}}} % integers
 \newcommand{\F}{\ensuremath{\mathbb{F}}} % field
 \newcommand{\R}{\ensuremath{\mathbb{R}}} % reals
